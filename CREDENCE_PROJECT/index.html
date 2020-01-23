@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<style>
+	.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+}
+
+</style>
+
+	<!-- Page Content -->
+<div class="container">
+	<font color="white">
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4">Movie Search Website
+    <small>(Credence Project)</small>
+  </h1>
+  <h2 class="my-3">
+  	Latest Movie
+  </h2>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-8">
+      <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+      <img src="images.jfif" align="left">
+    </div>
+
+    <div class="col-md-4">
+
+      <h3 class="my-3">Project Description</h3>
+      <p>This website is built using Vue.js framework. The data is fetched by using Omdb API. On this website you can search the movies by typing the name of the movie in the search bar below.</p>
+      <h3 class="my-3">Project Details</h3>
+      <ul>
+        <li>Movie Display</li>
+        <li>Simialr Title Movies</li>
+        <li>Grid View</li>
+      </ul>
+    </div>
+
+  </div>
+
+</font>
+	<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<body background="145580.jpg">
+	<br><br><br>
+	<div id="credence_movie_app">
+		<input type="text" v-model="searchKey">
+		<button class="btn btn-primary" v-on:click="searchMovies">Search</button>
+		<font color="white"><h2>Results</h2></font>
+		<div class="grid-container">
+		<ul
+			 v-for="item in movieList.Search">
+				<movie-detail v-bind:movie="item"></movie-detail>
+				
+			
+		</ul>
+	</div>
+	</div>
+	<script src="myvuemovieapp.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
