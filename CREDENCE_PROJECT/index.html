@@ -24,6 +24,9 @@
   text-align: center;
 }
 
+.mySlides {display:none;}
+
+
 </style>
 
 	<!-- Page Content -->
@@ -36,12 +39,18 @@
   <h2 class="my-3">
   	Latest Movie
   </h2>
-
   <!-- Portfolio Item Row -->
   <div class="row">
 
     <div class="col-md-8">
-      <img src="images.jfif" align="left">
+    	<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="james-bond.jpg" style="width:100%">
+  <img class="mySlides" src="images.jfif" style="width:100%">
+  <img class="mySlides" src="5920.jpg" style="width:100%">
+   <img class="mySlides" src="predator.jpg" style="width:100%">
+  <img class="mySlides" src="jumanji.jpg" style="width:100%">
+
+</div>    
     </div>
 
     <div class="col-md-4">
@@ -63,6 +72,22 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
+	<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
 	<body background="145580.jpg">
 	<br><br><br>
 	<div id="credence_movie_app">
